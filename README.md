@@ -1,3 +1,7 @@
+<div align="center">
+  <p>
+    <img src="https://assets.nickficano.com/gh-yakutils.min.svg" width="270" height="135" alt="yakutils logo" />
+  </p>
 <p align="center">
   <img src="https://img.shields.io/pypi/v/yakutils.svg" alt="pypi">
   <a href="https://pypi.org/project/yakutils/">
@@ -7,6 +11,7 @@
     <img src="https://img.shields.io/pypi/pyversions/yakutils.svg" />
   </a>
 </p>
+</div>
 
 # yakutils
 

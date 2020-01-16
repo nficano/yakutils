@@ -9,6 +9,7 @@ pycodestyle = "*"
 ipython = "*"
 flake8 = "*"
 black = "*"
+bumpversion = "*"
 
 [packages]
 

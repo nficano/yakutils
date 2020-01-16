@@ -1,5 +1,4 @@
 # yakutils
-# YakUtils
 
 Yakutils is a collection of helper methods I find myself often needing to write.  
 This package is available on PyPi, but its primary purpose is to allow me to copy 

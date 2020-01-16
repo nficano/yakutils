@@ -7,6 +7,7 @@
     <img src="https://img.shields.io/pypi/pyversions/yakutils.svg" />
   </a>
 </p>
+
 # yakutils
 
 Yakutils is a collection of helper methods I find myself often needing to write.

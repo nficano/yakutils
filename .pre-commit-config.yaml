@@ -10,8 +10,10 @@ repos:
           - '--indent=2'
       - id: trailing-whitespace
         name: 'Fix trailing whitespace'
+        exclude: setup.cfg
       - id: end-of-file-fixer
         name: 'Fix missing EOF'
+        exclude: setup.cfg
       - id: check-executables-have-shebangs
         name: 'Check exeutables for shebangs'
       - id: check-merge-conflict

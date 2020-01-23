@@ -1,16 +1,14 @@
 """This module contains boilerplate json helpers."""
 import json
-from typing import Iterator
-from typing import Union
 
 
-def read_json(filename: str) -> Union[dict, list]:
+def read_json(filename):
     """Read a JSON file.
 
     **Example**:
 
-    >>> read_json('/path/to/data.json')
-    [{ 'name': 'foo' }]
+        >>> read_json('/path/to/data.json')
+        [{ 'name': 'foo' }]
 
     :param filename:
         Path to JSON file.
@@ -21,14 +19,14 @@ def read_json(filename: str) -> Union[dict, list]:
         return json.loads(fh.read())
 
 
-def iter_json(filename: str) -> Iterator[dict]:
+def iter_json(filename):
     """Iterate a JSON file containing a list of dictionaries.
 
     **Example**:
 
-    >>> for item in iter_json('/path/to/data.json'):
-    ...     print(item)
-    [{ 'name': 'foo' }]
+        >>> for item in iter_json('/path/to/data.json'):
+        ...    print(item)
+        [{ 'name': 'foo' }]
 
     :param filename:
         Path to JSON file.

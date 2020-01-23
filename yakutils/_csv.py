@@ -1,10 +1,8 @@
 """This module contains boilerplate csv helpers."""
 import csv
-from typing import Iterator
-from typing import List
 
 
-def read_csv(filename: str) -> List[dict]:
+def read_csv(filename):
     """Read a CSV file.
 
     **Example**:
@@ -25,7 +23,7 @@ def read_csv(filename: str) -> List[dict]:
         return list(dict(row) for row in dict_reader)
 
 
-def iter_csv(filename: str) -> Iterator[dict]:
+def iter_csv(filename):
     """Iterate a CSV file.
 
     **Example**:

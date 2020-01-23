@@ -29,24 +29,21 @@ VERSION_CURRENT = $(bumpversion --dry-run --list major | grep current_version | 
 bumpversion-patch:
 	bumpversion patch
 	pre-commit run --all-files || true
-	git add .
-	git commit -am "Bump version: ${VERSION_CURRENT} → ${VERSION_PATCH}"
+	git commit -am 'Bump version: ${VERSION_CURRENT} → ${VERSION_PATCH}'
 	git push
 	git push --tags
 
 bumpversion-minor:
 	bumpversion minor
 	pre-commit run --all-files || true
-	git add .
-	git commit -am "Bump version: ${VERSION_CURRENT} → ${VERSION_MINOR}"
+	git commit -am 'Bump version: ${VERSION_CURRENT} → ${VERSION_MINOR}'
 	git push
 	git push --tags
 
 bumpversion-major:
 	bumpversion major
 	pre-commit run --all-files || true
-	git add .
-	git commit -am "Bump version: ${VERSION_CURRENT} → ${VERSION_MAJOR}"
+	git commit -am 'Bump version: ${VERSION_CURRENT} → ${VERSION_MAJOR}'
 	git push
 	git push --tags
 

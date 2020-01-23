@@ -9,5 +9,5 @@ from ._io import read_csv
 from ._io import read_json
 from ._io import iter_json
 from ._io import iter_csv
-
-from ._zipfile import zipdir
+from ._logging import BASE_LOGGING_CONFIG
+from ._logging import setup_logging

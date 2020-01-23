@@ -10,6 +10,7 @@ ipython = "*"
 flake8 = "*"
 black = "*"
 bumpversion = "*"
+mypy = "*"
 
 [packages]
 

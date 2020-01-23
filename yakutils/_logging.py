@@ -1,10 +1,10 @@
-"""This module contains logging boilerplate stuff I commonly use."""
+"""This module contains boilerplate logging helpers."""
 import logging.config
 
-BASE_LOGGING_CONFIG = {
+SANE_BASE_LOGGING_CONFIG = {
     "logging": {
         "version": 1,
-        "disable_existing_loggers": True,
+        "disable_existing_loggers": False,
         "formatters": {
             "simple": {"format": "%(asctime)s: %(message)s"},
             "verbose": {
@@ -24,15 +24,15 @@ BASE_LOGGING_CONFIG = {
 }
 
 
-def setup_logging(self, name: str, cfg=None):
-    """Setup application logging.
-    
+def setup_logging(self, name="root", cfg=None):
+    """Create a logger.
+
     :param name:
-        The name of the logger (typically __name__).
+        The name of the logger, defaults to 'root'.
     :param cfg:
-        The configuration, defaults to None.
+        The configuration ``dict``, defaults to ``SANE_BASE_LOGGING_CONFIG``.
     :return:
-        The application logger.
+        A logger with the specified name.
     """
-    logging.config.dictConfig(cfg or BASE_LOGGING_CONFIG)
+    logging.config.dictConfig(cfg or SANE_BASE_LOGGING_CONFIG)
     return logging.getLogger(name)

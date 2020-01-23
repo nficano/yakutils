@@ -1,4 +1,4 @@
-"""This module contains a collection of helpers I frequently use."""
+"""This module contains boilerplate io helpers."""
 import csv
 import json
 from typing import Iterator

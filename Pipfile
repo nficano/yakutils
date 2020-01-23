@@ -11,6 +11,8 @@ flake8 = "*"
 black = "*"
 bumpversion = "*"
 mypy = "*"
+pipenv-to-requirements = "*"
+wheel = "*"
 
 [packages]
 

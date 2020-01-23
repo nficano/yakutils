@@ -1,0 +1,3 @@
+from typing import Any
+
+def random_string(n: Any): ...

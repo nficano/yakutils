@@ -1,0 +1,3 @@
+from typing import Any
+
+def iso8601_to_datetime(strtime: Any): ...

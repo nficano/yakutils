@@ -1,6 +1,6 @@
 # flake8: noqa
 __title__ = "yakutils"
-__version__ = "1.1.2"
+__version__ = "1.1.3"
 __author__ = "Nick Ficano"
 __license__ = "MIT License"
 __copyright__ = "Copyright 2020 Nick Ficano"

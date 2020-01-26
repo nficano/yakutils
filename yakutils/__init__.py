@@ -12,8 +12,8 @@ from ._json import read_json
 from ._json import JSONEncoder
 from ._logging import SANE_BASE_LOGGING_CONFIG
 from ._logging import setup_logging
-from ._datetime import to_timezone
-from ._datetime import (
+from .__datetime import to_timezone
+from .__datetime import (
     iso8601_to_datetime,
     datetime_to_iso8601,
     date_to_iso8601,

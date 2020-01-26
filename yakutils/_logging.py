@@ -24,7 +24,7 @@ SANE_BASE_LOGGING_CONFIG = {
 }
 
 
-def setup_logging(self, name="root", cfg=None):
+def setup_logging(name="root", cfg=None):
     """Create a logger.
 
     :param name:

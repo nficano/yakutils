@@ -49,7 +49,7 @@ class UploadCommand(Command):
 
 setup(
     name="yakutils",
-    version="1.1.7",
+    version="1.1.8",
     author="Nick Ficano",
     author_email="nficano@gmail.com",
     packages=["yakutils"],

@@ -22,3 +22,4 @@ from ._datetime import (
 from ._random import random_string
 from ._hashlib import md5
 from ._hashlib import sha1
+from ._urllib import update_qs

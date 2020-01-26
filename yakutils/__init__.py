@@ -8,7 +8,8 @@ __copyright__ = "Copyright 2020 Nick Ficano"
 from ._csv import iter_csv
 from ._csv import read_csv
 from ._json import iter_json
-from ._json import read_json, JSONEncoder
+from ._json import read_json
+from ._json import JSONEncoder
 from ._logging import SANE_BASE_LOGGING_CONFIG
 from ._logging import setup_logging
 from ._datetime import to_timezone

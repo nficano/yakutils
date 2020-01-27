@@ -13,6 +13,8 @@ from ._datetime import datetime_to_unixtimestamp
 from ._datetime import iso8601_to_datetime
 from ._hashlib import md5
 from ._hashlib import sha1
+from ._hashlib import sha384
+from ._hashlib import sha3_384
 from ._json import iter_json
 from ._json import JSONEncoder
 from ._json import read_json

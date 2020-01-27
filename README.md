@@ -87,6 +87,14 @@ datetime.datetime(2020, 1, 26, 19, 4, 40, 219668)
 >>> sha1('sully sullenberger')
 '593e310d210500c0a7a9f379e209063a4a78cbf4'
 
+>>> from yakutils import sha384
+>>> sha384('sully sullenberger')
+'5986d690ec9df6daa53857b6d79d51abf8c18e9b43c0c5a7f9698f364245d31dc6d2558e01e225cc0d120cfda52646f8'
+
+>>> from yakutils import sha3_384
+>>> sha3_384('sully sullenberger')
+'9e3eb4f4507c52685ab62cd452e90c0c861d45cd621cc2f6cfd11485837935dc807f40fbfce32c61c9102b0b3cb6de8c'
+
 >>> from yakutils import iter_json
 >>> for item in iter_json('/path/to/data.json'):
 ...   print(item)

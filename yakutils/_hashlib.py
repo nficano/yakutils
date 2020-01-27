@@ -1,7 +1,7 @@
 """This module contains boilerplate hashlib helpers."""
 import hashlib
 
-__all__ = ["md5", "sha1"]
+__all__ = ["md5", "sha1", "sha384", "sha3_384"]
 
 
 def md5(s):
@@ -12,3 +12,13 @@ def md5(s):
 def sha1(s):
     """Compute the SHA1 of a given string."""
     return hashlib.sha1(s.encode("utf-8")).hexdigest()
+
+
+def sha384(s):
+    """Compute the SHA384 of a given string."""
+    return hashlib.sha384(s.encode("utf-8")).hexdigest()
+
+
+def sha3_384(s):
+    """Compute the SHA3 384 of a given string."""
+    return hashlib.sha3_384(s.encode("utf-8")).hexdigest()

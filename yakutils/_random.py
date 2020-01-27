@@ -9,4 +9,4 @@ __all__ = ["random_string"]
 def random_string(n):
     """Generate a random alphanumeric string of size ``n``."""
     symbols = ascii_letters + digits
-    return "".join(random.choice(symbols) for i in range(n))
+    return "".join(random.choices(symbols, k=n))

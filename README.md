@@ -15,7 +15,7 @@
 
 # yakutils
 
-Yak-utils is yet another toolbox of Python helper functions.
+Yakutils is yet another toolbox of Python helper functions.
 
 This package is available on PyPi, but its primary purpose is to allow one (me) to copy these into projects or to prevent one (me as well) from needing to Google how to write them (I'm looking at you ``csv.DictReader`` and ``csv.DictWriter``).
 

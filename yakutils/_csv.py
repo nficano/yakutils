@@ -42,5 +42,5 @@ def iter_csv(filename):
             fh.readline().replace('"', "").replace("\n", "").split(",")
         )
         dict_reader = csv.DictReader(fh, fieldnames=field_names)
-        for item in list(dict(row) for row in dict_reader):
-            yield item
+        for row in dict_reader:
+            yield dict(row)

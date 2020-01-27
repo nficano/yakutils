@@ -42,7 +42,7 @@ $ pip install yakutils
   # ...
 ]
 >>> from yakutils import read_json
->>> read_csv('/path/to/data.json')
+>>> read_json('/path/to/data.json')
 [
   {
     'name': 'Tomatillo',

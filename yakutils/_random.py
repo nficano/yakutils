@@ -8,8 +8,7 @@ __all__ = ["random_string", "random_tolerance"]
 
 def random_string(n):
     """Generate a random alphanumeric string of size ``n``."""
-    symbols = ascii_letters + digits
-    return "".join(random.choices(symbols, k=n))
+    return "".join(random.choices(ascii_letters + digits, k=n))
 
 
 def random_tolerance(value, tolerance):

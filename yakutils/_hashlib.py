@@ -32,7 +32,7 @@ def hash_any(obj, hasher):
     if isinstance(hasher, str):
         hasher = hashlib.new(hasher)
     elif str(type(hasher)) != "<class '_hashlib.HASH'>":
-        raise TypeError("hasher is not a ??")
+        raise TypeError("The given hasher object does not support hashing.")
 
     return hash_consumer(obj, hasher)
 

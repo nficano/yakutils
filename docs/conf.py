@@ -34,6 +34,8 @@ release = __version__
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 
+master_doc = "index"
+
 extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",

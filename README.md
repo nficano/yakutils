@@ -107,8 +107,15 @@ datetime.datetime(2020, 1, 26, 19, 4, 40, 219668)
 ]
 
 >>> import json
->>> from yakutils import JSONEncoder
->>> json.dumps({'now': dt.datetime.utcnow}, JSONEncoder)
+>>> from decimal import Decimal
+>>> from yakutils import json_defaults
+>>> json.dumps({
+...   'now': dt.datetime.utcnow(),
+...   'today': dt.date.today(),
+...   'time': dt.time(1,2,3),
+...   'num': Decimal(2.777),
+...}, default=json_defaults)
+'{"now": "2020-01-28T01:10:37.599281Z", "today": "2020-01-27", "time": "01:02:03", "num": 2.777}'
 
 >>> from yakutils import setup_logging
 >>> log = setup_logging(__name__)

@@ -1,0 +1,3 @@
+from typing import Any
+
+def pipe(value: Any, *funcs: Any): ...

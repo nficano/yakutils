@@ -2,41 +2,48 @@
 import datetime as dt
 import json
 from decimal import Decimal
+from functools import singledispatch
 
 from ._datetime import date_to_iso8601
 from ._datetime import datetime_to_iso8601
 
-__all__ = ["JSONEncoder", "read_json", "iter_json"]
+__all__ = ["json_defaults", "read_json", "iter_json"]
 
 
-class JSONEncoder(json.JSONEncoder):
-    """Extend JSONEncoder to gracefully handle various primitives."""
+@singledispatch
+def json_defaults(val):
+    """Create a generic JSON encodable value."""
+    return str(val)
 
-    def default(self, o):
-        """Convert data into a serializable format."""
-        if isinstance(o, dt.datetime):
-            return datetime_to_iso8601(o)
-        elif isinstance(o, dt.date):
-            return date_to_iso8601(o)
-        elif isinstance(o, dt.time):
-            representation = o.isoformat()
-            if o.microsecond:
-                return representation[:12]
-            return representation
-        elif isinstance(o, Decimal):
-            return float(o)
-        elif hasattr(o, "__getitem__"):
-            return dict(o)
-        elif hasattr(o, "__iter__"):
-            return tuple(item for item in o)
-        return super(JSONEncoder, self).default(o)
+
+@json_defaults.register(dt.datetime)
+def serialize_datetime(val):
+    """Create a JSON encodable value of a datetime object."""
+    return datetime_to_iso8601(val)
+
+
+@json_defaults.register(dt.date)
+def serialize_date(val):
+    """Create a JSON encodable value of a date object."""
+    return date_to_iso8601(val)
+
+
+@json_defaults.register(dt.date)
+def serialize_time(val):
+    """Create a JSON encodable value of a time object."""
+    return val.isoformat()
+
+
+@json_defaults.register(Decimal)
+def serialize_decimal(val):
+    """Create a JSON encodable value of a Decimal object."""
+    return float(val)
 
 
 def read_json(filename):
     """Read a JSON file.
 
-    **Example**:
-
+    Example::
         >>> read_json('/path/to/data.json')
         [{ 'name': 'foo' }]
 
@@ -52,11 +59,10 @@ def read_json(filename):
 def iter_json(filename):
     """Iterate a JSON file containing a list of dictionaries.
 
-    **Example**:
-
+    Example::
         >>> for item in iter_json('/path/to/data.json'):
         ...    print(item)
-        [{ 'name': 'foo' }]
+    [{ 'name': 'foo' }]
 
     :param filename:
         Path to JSON file.

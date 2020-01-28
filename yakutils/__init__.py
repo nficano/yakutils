@@ -16,9 +16,10 @@ from ._hashlib import sha1
 from ._hashlib import sha384
 from ._hashlib import sha3_384
 from ._json import iter_json
-from ._json import JSONEncoder
+from ._json import json_defaults
 from ._json import read_json
 from ._logging import SANE_BASE_LOGGING_CONFIG
 from ._logging import setup_logging
 from ._random import random_string
+from ._random import random_tolerance
 from ._urllib import update_qs

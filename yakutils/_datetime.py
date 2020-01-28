@@ -34,5 +34,5 @@ def date_to_iso8601(date):
 
 
 def datetime_to_unixtimestamp(datetime):
-    """Convert datetime to ISO 8601 string."""
+    """Convert datetime to Unix timestamp."""
     return int(calendar.timegm(datetime.timetuple()))

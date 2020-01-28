@@ -17,5 +17,7 @@ ipython
 mypy
 pipenv-to-requirements
 pycodestyle
+sphinx
+sphinx-rtd-theme
 twine
 wheel

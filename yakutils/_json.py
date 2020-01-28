@@ -10,36 +10,6 @@ from ._datetime import datetime_to_iso8601
 __all__ = ["json_defaults", "read_json", "iter_json"]
 
 
-@singledispatch
-def json_defaults(val):
-    """Create a generic JSON encodable value."""
-    return str(val)
-
-
-@json_defaults.register(dt.datetime)
-def serialize_datetime(val):
-    """Create a JSON encodable value of a datetime object."""
-    return datetime_to_iso8601(val)
-
-
-@json_defaults.register(dt.date)
-def serialize_date(val):
-    """Create a JSON encodable value of a date object."""
-    return date_to_iso8601(val)
-
-
-@json_defaults.register(dt.date)
-def serialize_time(val):
-    """Create a JSON encodable value of a time object."""
-    return val.isoformat()
-
-
-@json_defaults.register(Decimal)
-def serialize_decimal(val):
-    """Create a JSON encodable value of a Decimal object."""
-    return float(val)
-
-
 def read_json(filename):
     """Read a JSON file.
 
@@ -72,3 +42,33 @@ def iter_json(filename):
     with open(filename) as fh:
         for item in json.loads(fh.read()):
             yield item
+
+
+@singledispatch
+def json_defaults(val):
+    """Create a generic JSON encodable value."""
+    return str(val)
+
+
+@json_defaults.register(dt.datetime)
+def _serialize_datetime(val):
+    """Create a JSON encodable value of a datetime object."""
+    return datetime_to_iso8601(val)
+
+
+@json_defaults.register(dt.date)
+def _serialize_date(val):
+    """Create a JSON encodable value of a date object."""
+    return date_to_iso8601(val)
+
+
+@json_defaults.register(dt.date)
+def _serialize_time(val):
+    """Create a JSON encodable value of a time object."""
+    return val.isoformat()
+
+
+@json_defaults.register(Decimal)
+def _serialize_decimal(val):
+    """Create a JSON encodable value of a Decimal object."""
+    return float(val)

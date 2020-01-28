@@ -13,6 +13,7 @@ bumpversion = "*"
 mypy = "*"
 pipenv-to-requirements = "*"
 wheel = "*"
+sphinx = "*"
 
 [packages]
 

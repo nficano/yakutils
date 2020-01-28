@@ -25,4 +25,4 @@ def random_tolerance(value, tolerance):
     value = float(value)
     if tolerance == 0.0:
         return value
-    return random.uniform(value - value * tolerance, value + value * tolerance)
+    return value + value * random.uniform(-tolerance, tolerance)

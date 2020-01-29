@@ -103,7 +103,7 @@ Read a json file as a ``dict`` or ``list`` (depending of course on the json docu
 .. code-block:: python
 
     >>> from yakutils import read_json
-    >>> read_csv('/path/to/data.json')
+    >>> read_json('/path/to/data.json')
     [
       {
         'id': 1,

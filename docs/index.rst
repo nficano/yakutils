@@ -31,7 +31,7 @@ This project is a continuous work-in-progress for me, and while its contents are
 
 Features
 ========
-- No third-party dependancies.
+- No third-party dependencies.
 - Can be installed or be used as a source to copy and paste snippets.
 
 Installation

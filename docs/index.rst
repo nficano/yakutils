@@ -95,6 +95,17 @@ Read a csv file as a ``dict``.
       # ...
     ]
 
+write_csv
+---------
+
+Write a list of dictionaries to a csv file.
+
+.. code-block:: python
+
+    >>> from yakutils import write_csv
+    >>> data = [{'foo': 1, 'bar': 2}, {'foo': 6, 'bar': 50}]
+    >>> write_csv(data, 'mydata.csv')
+
 read_json
 ---------
 

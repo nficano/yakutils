@@ -1,16 +1,18 @@
 """This module contains boilerplate json helpers."""
 import datetime as dt
 import json
+import pathlib
 from decimal import Decimal
 from functools import singledispatch
+from typing import Union
 
 from ._datetime import date_to_iso8601
 from ._datetime import datetime_to_iso8601
 
-__all__ = ["json_defaults", "read_json", "iter_json"]
+__all__ = ["json_defaults", "read_json"]
 
 
-def read_json(filename):
+def read_json(filename: Union[pathlib.Path, str]):
     """Read a JSON file.
 
     Example::
@@ -22,26 +24,10 @@ def read_json(filename):
     :return:
         A Python representation of the JSON document.
     """
+    if isinstance(filename, str):
+        filename = pathlib.Path(filename)
     with open(filename) as fh:
         return json.loads(fh.read())
-
-
-def iter_json(filename):
-    """Iterate a JSON file containing a list of dictionaries.
-
-    Example::
-        >>> for item in iter_json('/path/to/data.json'):
-        ...    print(item)
-    [{ 'name': 'foo' }]
-
-    :param filename:
-        Path to JSON file.
-    :yield:
-        A Python ``dict`` representation of a JSON object.
-    """
-    with open(filename) as fh:
-        for item in json.loads(fh.read()):
-            yield item
 
 
 @singledispatch

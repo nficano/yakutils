@@ -4,9 +4,6 @@
   </p>
 <p align="center">
   <img src="https://img.shields.io/pypi/v/yakutils.svg" alt="pypi">
-  <a href="https://pypi.org/project/yakutils/">
-    <img src="https://img.shields.io/pypi/dm/yakutils.svg" alt="pypi">
-  </a>
   <a href="https://pypi.python.org/pypi/yakutils/">
     <img src="https://img.shields.io/pypi/pyversions/yakutils.svg" />
   </a>

@@ -2,8 +2,7 @@
 __title__ = "yakutils"
 __version__ = "1.7.0"
 __author__ = "Nick Ficano"
-__license__ = "MIT License"
-__copyright__ = "Copyright 2020 Nick Ficano"
+__license__ = "The Unlicense"
 
 from ._csv import read_csv, write_csv
 from ._datetime import date_to_iso8601

@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "yakutils"
+version = "1.7.0"
+description = "Yet another toolbox of Python 3 helper functions."
+authors = ["Nick Ficano <nficano@gmail.com>"]
+license = "Unlicense"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+
+[tool.poetry.dev-dependencies]
+black = "^22.3.0"
+bumpversion = "^0.6.0"
+flake8 = "^4.0.1"
+ipython = "^8.3.0"
+mypy = "^0.960"
+pipenv-to-requirements = "^0.9.0"
+pycodestyle = "^2.8.0"
+Sphinx = "^4.5.0"
+sphinx-rtd-theme = "^1.0.0"
+twine = "^4.0.0"
+wheel = "^0.37.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

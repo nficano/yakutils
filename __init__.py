@@ -1,1 +1,0 @@
-"""yakutils package."""

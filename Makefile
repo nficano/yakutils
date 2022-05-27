@@ -1,25 +1,8 @@
-dev:
-	pipenv install --dev
+deploy-patch: clean bumpversion-patch upload clean
 
-deploy-patch: requirements bumpversion-patch sdist bdist wheels upload clean
+deploy-minor: clean bumpversion-minor upload clean
 
-deploy-minor: requirements bumpversion-minor sdist bdist wheels upload clean
-
-deploy-major: requirements bumpversion-major sdist bdist wheels upload clean
-
-requirements:
-	pipenv_to_requirements
-
-sdist: requirements
-	python setup.py sdist
-
-bdist: requirements
-	python setup.py bdist
-
-wheels: requirements
-	python setup.py bdist_wheel
-
-clean: clean-build clean-pyc
+deploy-major: clean bumpversion-major upload clean
 
 bumpversion-patch:
 	bumpversion patch
@@ -37,7 +20,20 @@ bumpversion-major:
 	git push --tags
 
 upload:
-	python setup.py sdist bdist bdist_wheel upload
+	python setup.py sdist bdist_wheel
+	twine upload dist/*
+
+help:
+	@echo "clean - remove all build, test, coverage and Python artifacts"
+	@echo "clean-build - remove build artifacts"
+	@echo "clean-pyc - remove Python file artifacts"
+	@echo "install - install the package to the active Python's site-packages"
+
+lint:
+	poetry run flake8 yakutils
+	poetry run pylint yakutils
+
+clean: clean-build clean-pyc
 
 clean-build:
 	rm -fr build/
@@ -52,4 +48,6 @@ clean-pyc:
 	find . -name '*.pyo' -exec rm -f {} +
 	find . -name '*~' -exec rm -f {} +
 	find . -name '__pycache__' -exec rm -fr {} +
-	find . -name '.pytest_cache' -exec rm -fr {} +
+
+install: clean
+	python setup.py install
